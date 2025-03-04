@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import FilePicker from "../components/FilePicker";
 import { useState } from "react";
-import FilePicker from "./components/FilePicker";
-import UnfollowerList from "./components/UnfollowerList";
+import UnfollowerList from "../components/UnfollowerList";
 
 export default function Upload() {
   const [showResult, setShowResult] = useState(false);
