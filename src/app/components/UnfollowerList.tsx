@@ -38,9 +38,11 @@ export default function UnfollowerList({ extractedFiles }: Props) {
     );
 
     return followingList
-      .flatMap((list) => list.string_list_data)
-      .filter((user) => !followersSet.has(user.value))
-      .map((user) => ({ value: user.value, href: user.href }));
+      .filter((user) => !followersSet.has(user.title))
+      .map((user) => ({
+        value: user.title,
+        href: user.string_list_data[0].href,
+      }));
   }
 
   const usersList = findNonFollowers(followers, followings);
